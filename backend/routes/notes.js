@@ -69,6 +69,7 @@ router.put('/updatenote/:id', fetchuser, async (req, res) => {
 //ROUTE 4: deleting an existion note using: DELETE "/api/notes/addnote". login required
 router.delete('/deletenote/:id', fetchuser, async (req, res) => {
     try {
+
         // Find the note to be deleted and delete it
         let note = await Note.findById(req.params.id);
         if (!note) { return res.status(404).send("Not found") };
@@ -79,7 +80,7 @@ router.delete('/deletenote/:id', fetchuser, async (req, res) => {
         }
 
         note = await Note.findByIdAndDelete(req.params.id);
-        res.json({ "success":"Note has been deleted",note:note});
+        res.json({ "success": "Note has been deleted", note: note });
 
     } catch (error) {
         console.log(error.message + "here");
