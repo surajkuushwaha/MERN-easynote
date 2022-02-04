@@ -27,7 +27,7 @@ export const Home = () => {
         <button type="submit" className="btn btn-primary">Submit</button>
       </form>
     </div>
-    <Notes></Notes>
+    <Notes />
   </div>;
 };
 
