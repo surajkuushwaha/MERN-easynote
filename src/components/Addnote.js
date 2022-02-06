@@ -9,7 +9,7 @@ const Addnote = () => {
     const { addNote } = context;
     const handleClick = (e) => {
         e.preventDefault();
-        addNote(note.title,note.description,note.tag);
+        addNote(note.title, note.description, note.tag);
 
     }
     const onChange = (e) => {
@@ -23,17 +23,18 @@ const Addnote = () => {
             <h1>Add a note</h1>
             <form className='my-3' >
                 <div className="mb-3">
-                    <label htmlFor="exampleInputEmail1" className="form-label">Title</label>
+                    <label htmlFor="title" className="form-label">Title</label>
                     <input onChange={onChange} type="text" className="form-control" id="title" name="title" aria-describedby="emailHelp" />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="desc" className="form-label">Description</label>
                     <input type="text" className="form-control" id="desc" name="description" onChange={onChange} />
                 </div>
-                <div className="mb-3 form-check">
-                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                    <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
+                <div className="mb-3">
+                    <label htmlFor="tag" className="form-label">Tag</label>
+                    <input type="text" className="form-control" id="tag" name="tag" onChange={onChange} />
                 </div>
+
                 <button type="submit" className="btn btn-primary" onClick={handleClick}>Add Note</button>
             </form>
         </div>

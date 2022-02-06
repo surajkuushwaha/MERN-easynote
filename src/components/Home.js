@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import Addnote from './Addnote';
+import React from 'react';
 import Notes from './Notes';
 
 
