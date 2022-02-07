@@ -30,17 +30,18 @@ export const Signup = (props) => {
     console.log(json);
     if (json.success) {
       // Save the auth token and redirect
-      localStorage.setItem('token', json.authtoken);
-      props.showAlert("Account created successfully!",'success');
+      localStorage.setItem('token', json.authToken);
+      props.showAlert("Account created successfully!", 'success');
       navigate("/");
     } else {
-      props.showAlert(json.error,'danger');
+      props.showAlert(json.error, 'danger');
     }
 
   }
 
 
-  return <div>
+  return <div className='mt-2'>
+    <h1>Create a account for Easynotes</h1>
     <form onSubmit={handleSubmit}>
       <div className="mb-3">
         <label htmlFor="name" className="form-label">Enter Name</label>

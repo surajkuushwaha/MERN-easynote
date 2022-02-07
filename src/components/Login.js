@@ -27,11 +27,11 @@ const Login = (props) => {
     console.log(json);
     if (json.success) {
       // Save the auth token and redirect
-      localStorage.setItem('token', json.authtoken);      
-      props.showAlert("Login success!",'success');
+      localStorage.setItem('token', json.authToken);
+      props.showAlert("Login success!", 'success');
       navigate("/");
     } else {
-      props.showAlert(json.error,'danger');
+      props.showAlert(json.error, 'danger');
     }
 
   }
@@ -43,7 +43,8 @@ const Login = (props) => {
 
 
 
-  return <div>
+  return <div className='mt-2'>
+    <h1>Login to continue using Easynotes</h1>
     <form onSubmit={handleSubmit}>
       <div className="mb-3">
         <label htmlFor="email" className="form-label">Email address</label>
